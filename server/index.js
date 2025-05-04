@@ -1,9 +1,11 @@
 import express from "express";
 import connectDB from "./dbConfig.js";
+import cors from "cors";
 import { router as productRouter } from "./routes/product.route.js";
 
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
